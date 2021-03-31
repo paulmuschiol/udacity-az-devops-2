@@ -1,12 +1,14 @@
 # Overview
 
+[![Python application test with Github Actions](https://github.com/paulmuschiol/udacity-az-devops-2/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/paulmuschiol/udacity-az-devops-2/actions/workflows/pythonapp.yml)
+
 <TODO: complete this with an overview of your project>
 
 ## Project Plan
 <TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* Trello Board <https://trello.com/b/gBSg2Be7/udacity-devops-r2>
+* Project Plan <https://docs.google.com/spreadsheets/d/1eglH8eQMsFBMbxrhoCgWaRv9xnAr1unJ7hDYKaKsSjg/edit?usp=sharing>
 
 ## Instructions
 
