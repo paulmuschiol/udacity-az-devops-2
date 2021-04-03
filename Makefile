@@ -1,13 +1,16 @@
-setup:
-	python3 -m venv ~/.udacity-devops
-
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt &&\
-			pip install scikit-learn==0.21.3
+		pip install -r requirements.txt
+	pip install -r requirements_scikit.txt
+
+install_test:
+	pip install --upgrade pip &&\
+		pip install -r requirements.txt
+	pip install -r requirements_scikit.txt
+	pip install -r requirements_test.txt
 
 test:
-	#python -m pytest -vv --cov=myrepolib tests/*.py
+	python -m pytest -vv tests/*.py
 	#python -m pytest --nbval notebook.ipynb
 
 

@@ -39,11 +39,32 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
 
     - script: |
+        python -m venv testenv
+        source testenv/bin/activate
+        make install_test
+      workingDirectory: $(projectRoot)
+      displayName: "Install test environment"
+
+    - script: |
+        make lint
+      workingDirectory: $(projectRoot)
+      displayName: "Lint"
+
+    - script: |
+        make test
+      workingDirectory: $(projectRoot)
+      displayName: "Test"
+
+    - script: |
+        deactivate
+        rm -rf testenv/
+      workingDirectory: $(projectRoot)
+      displayName: "Destroy test environment"
+
+    - script: |
         python -m venv antenv
         source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        make install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
