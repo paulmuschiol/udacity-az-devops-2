@@ -3,7 +3,8 @@ setup:
 
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+		pip install -r requirements.txt &&\
+			pip install scikit-learn==0.21.3
 
 test:
 	#python -m pytest -vv --cov=myrepolib tests/*.py
