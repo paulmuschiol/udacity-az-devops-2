@@ -46,11 +46,13 @@ stages:
       displayName: "Install test environment"
 
     - script: |
+        source testenv/bin/activate
         make lint
       workingDirectory: $(projectRoot)
       displayName: "Lint"
 
     - script: |
+        source testenv/bin/activate
         make test
       workingDirectory: $(projectRoot)
       displayName: "Test"
