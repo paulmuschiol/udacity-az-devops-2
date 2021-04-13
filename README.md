@@ -1,7 +1,7 @@
 # Overview
 
 Udacity Azure DevOps Project 2
-Goal of the project is to setup a small ML app in Azure AppServices using a CI/CD pipeline.
+Goal of the project is to setup a small ML app in Azure AppServices using a CI/CD pipeline. It predicts house prices based on input variables. It's running as a small FLASK app.
 
 ## Project Plan
 
@@ -10,23 +10,19 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 
 ## Instructions
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
+![archdiagram](img/archdiagram.png "archdiagram")
 ### Preparation
 * Open up Azure Cloud Shell. If not done so create SSH Key and add to your github account.
 * Clone the project from github into your azure cloud shell
 * Create a virtual environment for python to run in.
-![Alt](img/venv.png "Venv")
+![Venv](img/venv.png "Venv")
 
 ### Local Deployment
-* To setup the evironment locally run `"make install_test" ` in the cloned project folder to install dependencies.
+* To setup the evironment locally run `"make install_test" ` in the cloned project folder to install dependencies. If you want you can check the installed dependencies in the [requirement.txt](requirements.txt) files.
 * You can now directly deploy your webapp to an Azure WebApp by running `az webapp up -n <your-appservice>` in the project folder in the Azure Cloud Shell. The "your-appservice" must be replaced by a globally unique string identifying your app. This can take a minute to deploy.
 * This gives you a web address at the end you can look up. It should give you something similiar to this:
 ![Demo](img/demo.png "Demo")
-* You can stream your logs in Azure Cloud Shell by `az webapp log tail`. You should see eomthing as below:
+* You can stream your logs in Azure Cloud Shell by `az webapp log tail`. You should see something like below:
 ![Log](img/log.png "Log")
 * Running `make all` additionally tests your environment. You should get below test result:
 ![make all](img/makeall.png "make all")
@@ -40,28 +36,16 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 ![pipeline success](img/pipeline.png "pipeline success").
 * You can further check in Azure Portal that your webapp is now setup and running. If you check 
 ### Outputs
-* You can use the [make_predict_azure_app.sh](make_predict_azure_app.sh) file to test your application. Simply edit the `<yourappname>` to your web app name.
-
-
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
+* You can use the [make_predict_azure_app.sh](make_predict_azure_app.sh) file to test your application. Simply edit the `<yourappname>` to your web app name. You should get ouput similar to the below.
+![output](img/output.png "output")
+* Find here again a sampl output of streamed log files for deployed application.
+![Log](img/log2.png "Log")
 
 ## Enhancements
 You  might do in future the following:
-* upgrade scikit-learn version to recent
+* upgrade scikit-learn to recent version
 * deploy using pre-build docker container and registry
-* enhance user interface
+* enhance user interface with interactive input for post request against ML service
 
 ## Demo 
 
