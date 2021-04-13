@@ -8,7 +8,7 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'c52bdd6b-f9ea-45a6-9f32-c281f186eccf'
+  azureServiceConnectionId: $(var-azureServiceConnectionId)
 
   # Web app name
   webAppName: 'pmu-udacty2-mlapp'

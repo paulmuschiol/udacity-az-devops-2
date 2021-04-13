@@ -1,7 +1,7 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
-	pip install -r requirements_scikit.txt
+		pip install -r requirements.txt &&\
+			pip install -r requirements_scikit.txt
 
 install_test:
 	pip install --upgrade pip &&\
