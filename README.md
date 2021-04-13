@@ -33,19 +33,16 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 
 ### Setup Azure Pipeline
 * Go to Azure DevOps and create new project if required
-* Navigate to Project Settings / Service Connections and setup a Service connection to aour Azure subscription (for details refer to the official documentation)
+* Navigate to Project Settings / Service Connections and setup a Service connection to your Azure subscription (for details refer to the official documentation). Copy your service connection secret.
 * Setup a pipeline by creating a new Pipeline. Refer here to your forked Git Project or setup a Azure Repo. For configuration you can utilize the [azure-pipelines.yml](azure-pipelines.yml) template pipeline.
+* Go to your pipeline config in Azure DevOps and add a variable `var-azureServiceConnectionId` holding your service connection secret. You might need to change the webapp name `webAppName` in file azure-pipelines.yml](azure-pipelines.yml) as well to make it globally unique.
+* Every commit to master branch now automatically kicks off the pipeline. You should be able to see your pipeline running successfully. The graphical output should be similar to below.
+![pipeline success](img/pipeline.png "pipeline success").
+* You can further check in Azure Portal that your webapp is now setup and running. If you check 
+### Outputs
+* You can use the [make_predict_azure_app.sh](make_predict_azure_app.sh) file to test your application. Simply edit the `<yourappname>` to your web app name.
 
 
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 
@@ -60,11 +57,11 @@ Port: 443
 
 * Output of streamed log files from deployed application
 
-> 
-
 ## Enhancements
-
-<TODO: A short description of how to improve the project in the future>
+You  might do in future the following:
+* upgrade scikit-learn version to recent
+* deploy using pre-build docker container and registry
+* enhance user interface
 
 ## Demo 
 
