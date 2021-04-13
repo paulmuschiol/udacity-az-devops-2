@@ -36,6 +36,7 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 * Navigate to Project Settings / Service Connections and setup a Service connection to aour Azure subscription (for details refer to the official documentation)
 * Setup a pipeline by creating a new Pipeline. Refer here to your forked Git Project or setup a Azure Repo. For configuration you can utilize the [azure-pipelines.yml](azure-pipelines.yml) template pipeline.
 
+
 * Project running on Azure App Service
 
 * Project cloned into Azure Cloud Shell
