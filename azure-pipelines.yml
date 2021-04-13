@@ -92,6 +92,8 @@ stages:
     pool:
       vmImage: $(vmImageName)
     environment: $(environmentName)
+    variables:
+    - group: PMU
     strategy:
       runOnce:
         deploy:
@@ -105,6 +107,6 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : pmu-udacty2-mlapp'
             inputs:
-              azureSubscription: $(azureServiceConnectionId)
+              azureSubscription: $(var-azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
