@@ -10,22 +10,22 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 
 ## Instructions
 
-![archdiagram](img/archdiagram.png "archdiagram")
+![archdiagram](img/archdiagram.PNG)
 ### Preparation
 * Open up Azure Cloud Shell. If not done so create SSH Key and add to your github account.
 * Clone the project from github into your azure cloud shell
 * Create a virtual environment for python to run in.
-![Venv](img/venv.png "Venv")
+![Venv](img/venv.PNG)
 
 ### Local Deployment
 * To setup the evironment locally run `"make install_test" ` in the cloned project folder to install dependencies. If you want you can check the installed dependencies in the [requirement.txt](requirements.txt) files.
 * You can now directly deploy your webapp to an Azure WebApp by running `az webapp up -n <your-appservice>` in the project folder in the Azure Cloud Shell. The "your-appservice" must be replaced by a globally unique string identifying your app. This can take a minute to deploy.
 * This gives you a web address at the end you can look up. It should give you something similiar to this:
-![Demo](img/demo.png "Demo")
+![Demo](img/demo.PNG "Demo")
 * You can stream your logs in Azure Cloud Shell by `az webapp log tail`. You should see something like below:
-![Log](img/log.png "Log")
+![Log](img/log.PNG "Log")
 * Running `make all` additionally tests your environment. You should get below test result:
-![make all](img/makeall.png "make all")
+![make all](img/makeall.PNG "make all")
 
 ### Setup Azure Pipeline
 * Go to Azure DevOps and create new project if required
@@ -37,9 +37,9 @@ Goal of the project is to setup a small ML app in Azure AppServices using a CI/C
 * You can further check in Azure Portal that your webapp is now setup and running. If you check 
 ### Outputs
 * You can use the [make_predict_azure_app.sh](make_predict_azure_app.sh) file to test your application. Simply edit the `<yourappname>` to your web app name. You should get ouput similar to the below.
-![output](img/output.png "output")
+![output](img/output.PNG "output")
 * Find here again a sampl output of streamed log files for deployed application.
-![Log](img/log2.png "Log")
+![Log](img/log2.PNG "Log")
 
 ## Enhancements
 You  might do in future the following:
