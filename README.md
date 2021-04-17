@@ -56,8 +56,19 @@ Architecture overview
 * Find here again a sample output of streamed log files for deployed application. You can do this as described above or go to the Azure Portal, open your App Service and select "Log Stream" in the left menu bar.
 ![Log](img/logs2.PNG "Log")
 
+## Load test
+
+* For load testing python tool locust is used. 
+* Please install first locust in any python environment by `pip3 install locust`
+* In the folder with the [locustfile.py](locustfile.py) run `locust`
+* Now you can open locust on [http://localhost:8089/]/(http://localhost:8089/)
+* Enter your spawn data and the address of your Azure WebApp. You should get a result as below.
+![Locust](img/locust.png "Locust")
+
 ## Enhancements
+
 You  might do in future the following:
+
 * upgrade scikit-learn to recent version
 * deploy using pre-build docker container and registry
 * enhance user interface with interactive input for post request against ML service
