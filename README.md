@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/paulmuschiol/udacity-az-devops-2/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/paulmuschiol/udacity-az-devops-2/actions/workflows/pythonapp.yml)
+
 # Overview
 
 Udacity Azure DevOps Project 2
